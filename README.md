@@ -77,7 +77,8 @@ when user QA save data it save bug to tblTicketTracking and status bug is Pendin
   
   
 III: URL for Tesing this App and all User Password
-  -103.240.113.190:880
+  -Testing by Browser
+  -URL: 103.240.113.190:880
   -username:QA  paaword:123
   -username:RD  paaword:123
   -username:PM  paaword:123
@@ -86,7 +87,9 @@ III: URL for Tesing this App and all User Password
   
   
   Create By: Kaing Teangka
+  
   Thank You
+  
   Best Regards,
   
     
