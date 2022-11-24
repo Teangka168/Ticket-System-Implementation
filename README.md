@@ -6,7 +6,7 @@ I Create The web Application using
 - Database: SQL Server 2005
 
 I: Structure Database
-  +tblTicketTracking
+  +tblTicketTracking  
     -id
     -status_id
     -title
@@ -86,10 +86,8 @@ III: URL for Tesing this App and all User Password
   
   
   
-  Create By: Kaing Teangka
-  
-  Thank You
-  
+  Create By: Kaing Teangka  
+  Thank You  
   Best Regards,
   
     
