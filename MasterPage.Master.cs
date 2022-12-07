@@ -234,10 +234,10 @@ namespace WebApp
         {
             int intGroupID = 0;
 
-            int intEmp_id = int.Parse(this.Session["User_id"].ToString());
+            int intUS_id = int.Parse(this.Session["User_id"].ToString());
 
-            DataTable dtEmployeeData = new EmployeePersonalInformation().LoadEmployeePersonalInformation(intEmp_id, sqlConn);
-            foreach (DataRow dr in dtEmployeeData.Rows)
+            DataTable dtUserData = LoadUserName(intUS_id, sqlConn);
+            foreach (DataRow dr in dtUserData.Rows)
             {
                 intGroupID = int.Parse(dr["group_id"].ToString());
             }
@@ -249,13 +249,14 @@ namespace WebApp
             string strUserName = "";
             int intUS_id = int.Parse(this.Session["us_id"].ToString());
 
-            DataTable dtEmployeeData = LoadUserName(intUS_id, sqlConn);
-            foreach (DataRow dr in dtEmployeeData.Rows)
+            DataTable dtUserData = LoadUserName(intUS_id, sqlConn);
+            foreach (DataRow dr in dtUserData.Rows)
             {
                 strUserName = dr["full_name"].ToString();
             }
             return strUserName;
         }
+        
         private DataTable LoadUserName(int intUserID, SqlConnection sqlConn)
         {
             DataTable dtResult = new DataTable();
