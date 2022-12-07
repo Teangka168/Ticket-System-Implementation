@@ -46,7 +46,8 @@ I: Structure Database
     -last_name
     -sex
     -user_name
-    -password
+    -password1
+    -password2
     -description
     -usertype_id
     -is_active
