@@ -35,7 +35,7 @@ namespace WebApp
             try
             {
                 new DBHelper().InitiateWebConnection(out _sqlConn);
-                strUserID = loadEmployeeName(_sqlConn);
+                strUserID = LoadUserName(_sqlConn);
                 userGroupID = loadGroupUserID(_sqlConn);
             }
             catch (Exception ex)
