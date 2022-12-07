@@ -153,26 +153,25 @@ namespace WebApp
             try
             {
                 string strSQL =
-"--declare @group_id int\r\n" +
-"--set @group_id=1\r\n" +
-"\r\n" +
-"select hp.id\r\n" +
-",hp.short_name + ' |' as short_name\r\n" +
-",hp.full_name \r\n" +
-",hp.is_active\r\n" +
-",hp.sort_order \r\n" +
-"from tblhotelproperty hp\r\n" +
-"left join tblPermission p on hp.id=p.menu_parent_id\r\n" +
-"where is_active=1\r\n" +
-"and p.group_id=@group_id\r\n" +
-"group by \r\n" +
-"hp.id\r\n" +
-",hp.short_name\r\n" +
-",hp.full_name\r\n" +
-",hp.is_active\r\n" +
-",hp.sort_order \r\n" +
-"order by sort_order\r\n";
-
+                "--declare @group_id int\r\n" +
+                "--set @group_id=1\r\n" +
+                "\r\n" +
+                "select hp.id\r\n" +
+                ",hp.short_name + ' |' as short_name\r\n" +
+                ",hp.full_name \r\n" +
+                ",hp.is_active\r\n" +
+                ",hp.sort_order \r\n" +
+                "from tblMenu hp\r\n" +
+                "left join tblPermission p on hp.id=p.menu_parent_id\r\n" +
+                "where is_active=1\r\n" +
+                "and p.group_id=@group_id\r\n" +
+                "group by \r\n" +
+                "hp.id\r\n" +
+                ",hp.short_name\r\n" +
+                ",hp.full_name\r\n" +
+                ",hp.is_active\r\n" +
+                ",hp.sort_order \r\n" +
+                "order by sort_order\r\n";
                 SqlCommand sqlcom = _sqlConn.CreateCommand();
                 sqlcom.CommandText = strSQL;
                 sqlcom.CommandTimeout = 0;
@@ -190,34 +189,29 @@ namespace WebApp
             try
             {
                 string strSQL =
-"--declare @group_id int\r\n" +
-"--set @group_id=1\r\n" +
-"\r\n" +
-"select st.id\r\n" +
-",st.[name]\r\n" +
-",st.description\r\n" +
-",st.is_active\r\n" +
-",st.sort_order\r\n" +
-",st.hotelproperty_id\r\n" +
-",st.create_by\r\n" +
-",st.create_date\r\n" +
-"from tblsection st\r\n" +
-"left join tblhotelproperty hp on st.hotelproperty_id=hp.id\r\n" +
-"left join tblPermission p on st.id=p.menu_child_id \r\n" +
-"and  hp.id=p.menu_parent_id\r\n" +
-"where st.is_active=1\r\n" +
-"and p.group_id=@group_id\r\n" +
-"group by \r\n" +
-"st.id\r\n" +
-",st.[name]\r\n" +
-",st.description\r\n" +
-",st.is_active\r\n" +
-",st.sort_order\r\n" +
-",st.hotelproperty_id\r\n" +
-",st.create_by\r\n" +
-",st.create_date \r\n" +
-"order by sort_order\r\n";
-
+                "--declare @group_id int\r\n" +
+                "--set @group_id=1\r\n" +
+                "\r\n" +
+                "select st.id\r\n" +
+                ",st.[name]\r\n" +
+                ",st.description\r\n" +
+                ",st.is_active\r\n" +
+                ",st.create_by\r\n" +
+                ",st.create_date\r\n" +
+                "from tblTicketType st\r\n" +
+                "left join tblMenu hp on st.menu_id=hp.id\r\n" +
+                "left join tblPermission p on st.id=p.menu_child_id \r\n" +
+                "and  hp.id=p.menu_parent_id\r\n" +
+                "where st.is_active=1\r\n" +
+                "and p.group_id=@group_id\r\n" +
+                "group by \r\n" +
+                "st.id\r\n" +
+                ",st.[name]\r\n" +
+                ",st.description\r\n" +
+                ",st.is_active\r\n" +
+                ",st.create_by\r\n" +
+                ",st.create_date \r\n" +
+                "order by sort_order\r\n";
                 SqlCommand sqlcom = _sqlConn.CreateCommand();
                 sqlcom.CommandText = strSQL;
                 sqlcom.CommandTimeout = 0;
