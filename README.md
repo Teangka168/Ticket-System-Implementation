@@ -35,8 +35,7 @@ I: Structure Database
   
     -id
     -name
-    -is_active
-    
+    -is_active    
 (this table have 4 row: QA, RD, PM, Administrator)     
   
   +tblUser
@@ -52,28 +51,33 @@ I: Structure Database
     -usertype_id
     -is_active
     
+  +tblPermission
+
+    -group_id
+    -menu_parent_id
+    -menu_chile_id
+    -menu_name
+    -user_name
+    
   +tblStaus
   
     -id
     -name
-    -is_active
-    
+    -is_active    
 (this table have 2 row: Pending, Resolve)
 
   +tblSeverity
   
     -id
     -name
-    -is_active
-    
+    -is_active    
 (this table have 4 row: Critical, Major, Minor, Low)
 
   +tblPriority
   
     -id
     -name
-    -is_active
-    
+    -is_active    
 (this table have 4 row: Immediate, High, Medium, Low) 
     
 II: Processing App
