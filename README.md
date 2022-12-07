@@ -29,7 +29,6 @@ I: Structure Database
     -description
     -create_by
     -create_date
-    -menu_id
     -is_active
     
   +tblUserGroup
